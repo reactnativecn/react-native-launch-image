@@ -1,14 +1,26 @@
 
 {
   "name": "react-native-launch-image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reactnativecn/react-native-launch-image.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reactnativecn/react-native-launch-image/issues"
+  },
+  "homepage": "https://github.com/reactnativecn/react-native-launch-image#readme",
   "keywords": [
-    "react-native"
+    "react-native",
+    "ios",
+    "splash",
+    "launch",
+    "image"
   ],
   "author": "",
   "license": "",
