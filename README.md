@@ -1,7 +1,9 @@
 
 # react-native-launch-image
 
-Currently 
+Currently only iOS was supported. (for native iOS launch image)
+ 
+On android launch image should be implemented as a activity, this is under development. 
 
 ## Getting started
 
@@ -10,9 +12,6 @@ Currently
 ### Mostly automatic installation
 
 `$ react-native link react-native-launch-image`
-
-#### iOS
-
 
 ### Manual installation
 
@@ -48,13 +47,44 @@ Currently
       
 
 ## Usage
+
+#### iOS
+
+You should add following code to `AppDelegate.m` for keeping launch image:
+ 
+```obj-c
+
+#import "AppDelegate.h"
+
+#import "RCTRootView.h"
+#import "RNLaunchImage.h"  // <-- Add this line.
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // ...other code
+    
+    [RNLaunchImage wait];   // <-- Add this line. This line MUST be the last line of this method.
+    return YES;
+}
+
+@end
+
+```
+
+
+#### Javascript
+ 
+Use RNLaunchImage.hide() to hide launch image manually. 
+
 ```javascript
-import RNLaunchImage from 'react-native-launch-image';
+import * as launchImage from 'react-native-launch-image';
 
 class App extends React.Component {
     async componentDidMount(){
         // do anything while launch image keeps, use await to wait for an async task.
-        RNLaunchImage.hide();
+        launchImage.hide();
     }
 }
 ```
